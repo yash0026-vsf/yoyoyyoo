@@ -4,7 +4,7 @@
  * Verifies that an uploaded resume actually belongs to the authenticated
  * candidate/officer rather than another individual.
  *
- * Prevents name mismatches (e.g. uploading "Rajesh Kumar" while registered as "Yash")
+ * Prevents name mismatches (e.g. uploading "Rajesh Kumar" while registered as "Tanmay Mamania")
  * and extracts claimed cadre skills.
  */
 
