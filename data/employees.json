@@ -1,0 +1,492 @@
+[
+  {
+    "employee_id": "E001",
+    "name": "Vivek Reddy",
+    "designation": "Statistical Officer",
+    "department": "Ministry of Electronics & IT",
+    "years_experience": 8,
+    "past_trainings": [
+      "Data Privacy in Public Sector",
+      "Foundational AI for Governance"
+    ],
+    "current_role": "Statistical Officer",
+    "resume_text": "Responsible for data validation, tabulation, and preliminary analysis of survey datasets. Worked on NSS survey design and field data collection for 8 years across multiple states.",
+    "required_competency_profile": {
+      "Survey Design": 4,
+      "Data Analysis": 4,
+      "Python": 2,
+      "Communication": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E002",
+    "name": "Manish Chatterjee",
+    "designation": "Statistical Officer",
+    "department": "MoSPI (Ministry of Statistics)",
+    "years_experience": 3,
+    "past_trainings": [
+      "Digital India Orientation",
+      "RTI Act Training"
+    ],
+    "current_role": "Statistical Officer",
+    "resume_text": "Responsible for data validation, tabulation, and preliminary analysis of survey datasets. Worked on NSS survey design and field data collection for 3 years across multiple states.",
+    "required_competency_profile": {
+      "Survey Design": 4,
+      "Data Analysis": 4,
+      "Python": 2,
+      "Communication": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E003",
+    "name": "Ritu Nair",
+    "designation": "Programme Officer",
+    "department": "Ministry of Rural Development",
+    "years_experience": 15,
+    "past_trainings": [
+      "NSS Survey Methodology Workshop",
+      "Data Privacy in Public Sector",
+      "Leadership Development Programme"
+    ],
+    "current_role": "Programme Officer",
+    "resume_text": "Led community outreach and communicated programme guidelines to stakeholders. Managed a team of field workers and resolved on-ground implementation issues.",
+    "required_competency_profile": {
+      "Communication": 4,
+      "Leadership": 3,
+      "e-Governance Systems": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E004",
+    "name": "Vikram Nair",
+    "designation": "Data Analyst (Govt.)",
+    "department": "Ministry of Finance",
+    "years_experience": 3,
+    "past_trainings": [
+      "Foundational AI for Governance",
+      "e-Office Systems Training",
+      "RTI Act Training",
+      "Public Financial Management Course"
+    ],
+    "current_role": "Data Analyst (Govt.)",
+    "resume_text": "Wrote SQL queries and Python scripts to process large administrative datasets. Built data pipelines and dashboards for government analytics over 3 years.",
+    "required_competency_profile": {
+      "Python": 4,
+      "SQL": 4,
+      "Data Visualization": 4,
+      "Data Analysis": 4
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E005",
+    "name": "Anita Das",
+    "designation": "Section Officer",
+    "department": "Ministry of Education",
+    "years_experience": 3,
+    "past_trainings": [
+      "Grievance Redressal Systems Workshop",
+      "e-Office Systems Training",
+      "Digital India Orientation"
+    ],
+    "current_role": "Section Officer",
+    "resume_text": "Supervised a small team handling routine governance workflows. Managed day-to-day administrative operations and file processing on e-Office for 3 years.",
+    "required_competency_profile": {
+      "e-Governance Systems": 3,
+      "Decision Making": 3,
+      "Communication": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E006",
+    "name": "Priya Kapoor",
+    "designation": "Deputy Secretary",
+    "department": "Ministry of Electronics & IT",
+    "years_experience": 3,
+    "past_trainings": [
+      "Foundational AI for Governance",
+      "Leadership Development Programme"
+    ],
+    "current_role": "Deputy Secretary",
+    "resume_text": "Managed budget allocation and monitored implementation of government programmes. Led a team of officers and made high-stakes decisions on programme rollout.",
+    "required_competency_profile": {
+      "Leadership": 4,
+      "Decision Making": 4,
+      "e-Governance Systems": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E007",
+    "name": "Vivek Kulkarni",
+    "designation": "Under Secretary",
+    "department": "Ministry of Agriculture",
+    "years_experience": 12,
+    "past_trainings": [
+      "Public Financial Management Course",
+      "Foundational AI for Governance"
+    ],
+    "current_role": "Under Secretary",
+    "resume_text": "Reviewed and finalized cabinet notes and policy memoranda. Oversaw policy drafting and approval workflows for 12 years in the ministry.",
+    "required_competency_profile": {
+      "Decision Making": 4,
+      "Leadership": 3,
+      "Communication": 4
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E008",
+    "name": "Ritu Saxena",
+    "designation": "Deputy Secretary",
+    "department": "Ministry of Health & Family Welfare",
+    "years_experience": 15,
+    "past_trainings": [
+      "Public Financial Management Course",
+      "RTI Act Training",
+      "Digital India Orientation",
+      "e-Office Systems Training"
+    ],
+    "current_role": "Deputy Secretary",
+    "resume_text": "Managed budget allocation and monitored implementation of government programmes. Directed cross-departmental coordination on flagship schemes for 15 years.",
+    "required_competency_profile": {
+      "Leadership": 4,
+      "Decision Making": 4,
+      "e-Governance Systems": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E009",
+    "name": "Divya Verma",
+    "designation": "Data Analyst (Govt.)",
+    "department": "Ministry of Education",
+    "years_experience": 9,
+    "past_trainings": [
+      "Digital India Orientation"
+    ],
+    "current_role": "Data Analyst (Govt.)",
+    "resume_text": "Developed visualizations used in ministry-level review meetings. Wrote SQL queries and Python scripts to process large administrative datasets.",
+    "required_competency_profile": {
+      "Python": 4,
+      "SQL": 4,
+      "Data Visualization": 4,
+      "Data Analysis": 4
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E010",
+    "name": "Karan Chauhan",
+    "designation": "Joint Secretary",
+    "department": "Ministry of Education",
+    "years_experience": 21,
+    "past_trainings": [
+      "Data Privacy in Public Sector",
+      "Public Financial Management Course",
+      "Grievance Redressal Systems Workshop",
+      "Foundational AI for Governance"
+    ],
+    "current_role": "Joint Secretary",
+    "resume_text": "Led major reforms requiring coordination across multiple ministries. Made critical policy decisions under significant time and political pressure.",
+    "required_competency_profile": {
+      "Leadership": 5,
+      "Decision Making": 5,
+      "Communication": 5
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E011",
+    "name": "Anita Bhatt",
+    "designation": "Programme Officer",
+    "department": "Ministry of Education",
+    "years_experience": 12,
+    "past_trainings": [
+      "Data Privacy in Public Sector",
+      "RTI Act Training"
+    ],
+    "current_role": "Programme Officer",
+    "resume_text": "Led community outreach and communicated programme guidelines to stakeholders. Coordinated field-level implementation of welfare schemes for 12 years.",
+    "required_competency_profile": {
+      "Communication": 4,
+      "Leadership": 3,
+      "e-Governance Systems": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E012",
+    "name": "Rajesh Verma",
+    "designation": "Section Officer",
+    "department": "Ministry of Health & Family Welfare",
+    "years_experience": 21,
+    "past_trainings": [
+      "Leadership Development Programme",
+      "Foundational AI for Governance"
+    ],
+    "current_role": "Section Officer",
+    "resume_text": "Coordinated inter-departmental correspondence and handled RTI applications. Supervised a small team handling routine governance workflows.",
+    "required_competency_profile": {
+      "e-Governance Systems": 3,
+      "Decision Making": 3,
+      "Communication": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E013",
+    "name": "Deepa Das",
+    "designation": "Assistant Director",
+    "department": "MoSPI (Ministry of Statistics)",
+    "years_experience": 22,
+    "past_trainings": [
+      "RTI Act Training"
+    ],
+    "current_role": "Assistant Director",
+    "resume_text": "Used digital dashboards to track scheme implementation across districts. Coordinated with field officers to ensure data quality in reporting systems.",
+    "required_competency_profile": {
+      "Data Analysis": 3,
+      "Digital Tools Proficiency": 3,
+      "Communication": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E014",
+    "name": "Ananya Mehta",
+    "designation": "Programme Officer",
+    "department": "Ministry of Health & Family Welfare",
+    "years_experience": 15,
+    "past_trainings": [
+      "Public Financial Management Course"
+    ],
+    "current_role": "Programme Officer",
+    "resume_text": "Managed a team of field workers and resolved on-ground implementation issues. Coordinated field-level implementation of welfare schemes for 15 years.",
+    "required_competency_profile": {
+      "Communication": 4,
+      "Leadership": 3,
+      "e-Governance Systems": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E015",
+    "name": "Suresh Reddy",
+    "designation": "Assistant Director",
+    "department": "Ministry of Rural Development",
+    "years_experience": 5,
+    "past_trainings": [
+      "Data Privacy in Public Sector",
+      "RTI Act Training",
+      "NSS Survey Methodology Workshop"
+    ],
+    "current_role": "Assistant Director",
+    "resume_text": "Coordinated with field officers to ensure data quality in reporting systems. Used digital dashboards to track scheme implementation across districts.",
+    "required_competency_profile": {
+      "Data Analysis": 3,
+      "Digital Tools Proficiency": 3,
+      "Communication": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E016",
+    "name": "Pooja Sharma",
+    "designation": "Section Officer",
+    "department": "Ministry of Agriculture",
+    "years_experience": 10,
+    "past_trainings": [
+      "NSS Survey Methodology Workshop",
+      "Digital India Orientation"
+    ],
+    "current_role": "Section Officer",
+    "resume_text": "Supervised a small team handling routine governance workflows. Managed day-to-day administrative operations and file processing on e-Office for 10 years.",
+    "required_competency_profile": {
+      "e-Governance Systems": 3,
+      "Decision Making": 3,
+      "Communication": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E017",
+    "name": "Rohan Saxena",
+    "designation": "Joint Secretary",
+    "department": "Ministry of Finance",
+    "years_experience": 25,
+    "past_trainings": [
+      "Data Privacy in Public Sector",
+      "Basic Python for Officers"
+    ],
+    "current_role": "Joint Secretary",
+    "resume_text": "Led major reforms requiring coordination across multiple ministries. Set strategic direction for departmental initiatives over 25 years of service.",
+    "required_competency_profile": {
+      "Leadership": 5,
+      "Decision Making": 5,
+      "Communication": 5
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E018",
+    "name": "Arjun Pillai",
+    "designation": "Programme Officer",
+    "department": "Ministry of Rural Development",
+    "years_experience": 18,
+    "past_trainings": [
+      "Public Financial Management Course",
+      "Leadership Development Programme"
+    ],
+    "current_role": "Programme Officer",
+    "resume_text": "Managed a team of field workers and resolved on-ground implementation issues. Led community outreach and communicated programme guidelines to stakeholders.",
+    "required_competency_profile": {
+      "Communication": 4,
+      "Leadership": 3,
+      "e-Governance Systems": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E019",
+    "name": "Amit Pillai",
+    "designation": "Joint Secretary",
+    "department": "Ministry of Finance",
+    "years_experience": 8,
+    "past_trainings": [
+      "Foundational AI for Governance",
+      "e-Office Systems Training"
+    ],
+    "current_role": "Joint Secretary",
+    "resume_text": "Set strategic direction for departmental initiatives over 8 years of service. Led major reforms requiring coordination across multiple ministries.",
+    "required_competency_profile": {
+      "Leadership": 5,
+      "Decision Making": 5,
+      "Communication": 5
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E020",
+    "name": "Manish Singh",
+    "designation": "Statistical Officer",
+    "department": "Ministry of Finance",
+    "years_experience": 23,
+    "past_trainings": [
+      "Digital India Orientation"
+    ],
+    "current_role": "Statistical Officer",
+    "resume_text": "Worked on NSS survey design and field data collection for 23 years across multiple states. Responsible for data validation, tabulation, and preliminary analysis of survey datasets.",
+    "required_competency_profile": {
+      "Survey Design": 4,
+      "Data Analysis": 4,
+      "Python": 2,
+      "Communication": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E021",
+    "name": "Rahul Patel",
+    "designation": "Deputy Secretary",
+    "department": "Ministry of Electronics & IT",
+    "years_experience": 22,
+    "past_trainings": [
+      "Digital India Orientation",
+      "RTI Act Training",
+      "Data Privacy in Public Sector",
+      "e-Office Systems Training"
+    ],
+    "current_role": "Deputy Secretary",
+    "resume_text": "Led a team of officers and made high-stakes decisions on programme rollout. Managed budget allocation and monitored implementation of government programmes.",
+    "required_competency_profile": {
+      "Leadership": 4,
+      "Decision Making": 4,
+      "e-Governance Systems": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E022",
+    "name": "Divya Menon",
+    "designation": "Programme Officer",
+    "department": "Ministry of Rural Development",
+    "years_experience": 4,
+    "past_trainings": [
+      "Leadership Development Programme"
+    ],
+    "current_role": "Programme Officer",
+    "resume_text": "Led community outreach and communicated programme guidelines to stakeholders. Managed a team of field workers and resolved on-ground implementation issues.",
+    "required_competency_profile": {
+      "Communication": 4,
+      "Leadership": 3,
+      "e-Governance Systems": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E023",
+    "name": "Neha Das",
+    "designation": "Statistical Officer",
+    "department": "Ministry of Finance",
+    "years_experience": 2,
+    "past_trainings": [
+      "e-Office Systems Training",
+      "Foundational AI for Governance",
+      "Digital India Orientation",
+      "RTI Act Training"
+    ],
+    "current_role": "Statistical Officer",
+    "resume_text": "Worked on NSS survey design and field data collection for 2 years across multiple states. Led sample survey planning and coordinated enumerator training for large-scale statistical exercises.",
+    "required_competency_profile": {
+      "Survey Design": 4,
+      "Data Analysis": 4,
+      "Python": 2,
+      "Communication": 3
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E024",
+    "name": "Vikram Chatterjee",
+    "designation": "Under Secretary",
+    "department": "Ministry of Electronics & IT",
+    "years_experience": 15,
+    "past_trainings": [
+      "Foundational AI for Governance",
+      "Basic Python for Officers"
+    ],
+    "current_role": "Under Secretary",
+    "resume_text": "Reviewed and finalized cabinet notes and policy memoranda. Oversaw policy drafting and approval workflows for 15 years in the ministry.",
+    "required_competency_profile": {
+      "Decision Making": 4,
+      "Leadership": 3,
+      "Communication": 4
+    },
+    "quiz_assessed_skills": null
+  },
+  {
+    "employee_id": "E025",
+    "name": "Priya Chauhan",
+    "designation": "Statistical Officer",
+    "department": "Ministry of Finance",
+    "years_experience": 25,
+    "past_trainings": [
+      "Data Privacy in Public Sector",
+      "Leadership Development Programme"
+    ],
+    "current_role": "Statistical Officer",
+    "resume_text": "Led sample survey planning and coordinated enumerator training for large-scale statistical exercises. Responsible for data validation, tabulation, and preliminary analysis of survey datasets.",
+    "required_competency_profile": {
+      "Survey Design": 4,
+      "Data Analysis": 4,
+      "Python": 2,
+      "Communication": 3
+    },
+    "quiz_assessed_skills": null
+  }
+]

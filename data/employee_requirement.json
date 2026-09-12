@@ -1,0 +1,44 @@
+{
+  "Statistical Officer": {
+    "Survey Design": 4,
+    "Data Analysis": 4,
+    "Python": 2,
+    "Communication": 3
+  },
+  "Programme Officer": {
+    "Communication": 4,
+    "Leadership": 3,
+    "e-Governance Systems": 3
+  },
+  "Data Analyst (Govt.)": {
+    "Python": 4,
+    "SQL": 4,
+    "Data Visualization": 4,
+    "Data Analysis": 4
+  },
+  "Section Officer": {
+    "e-Governance Systems": 3,
+    "Decision Making": 3,
+    "Communication": 3
+  },
+  "Deputy Secretary": {
+    "Leadership": 4,
+    "Decision Making": 4,
+    "e-Governance Systems": 3
+  },
+  "Under Secretary": {
+    "Decision Making": 4,
+    "Leadership": 3,
+    "Communication": 4
+  },
+  "Joint Secretary": {
+    "Leadership": 5,
+    "Decision Making": 5,
+    "Communication": 5
+  },
+  "Assistant Director": {
+    "Data Analysis": 3,
+    "Digital Tools Proficiency": 3,
+    "Communication": 3
+  }
+}

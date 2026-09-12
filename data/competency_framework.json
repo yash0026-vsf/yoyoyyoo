@@ -1,0 +1,87 @@
+{
+  "Statistical Skills": {
+    "Survey Design": {
+      "1": "No exposure to survey design",
+      "2": "Assisted on a survey under supervision",
+      "3": "Designed a survey instrument independently",
+      "4": "Led multi-region/large-scale survey design",
+      "5": "Expert; trains others on survey methodology"
+    },
+    "Data Analysis": {
+      "1": "Can read basic summary statistics",
+      "2": "Performs descriptive analysis with guidance",
+      "3": "Independently analyzes datasets and draws conclusions",
+      "4": "Applies advanced statistical methods (regression, sampling theory)",
+      "5": "Designs analytical frameworks used org-wide"
+    },
+    "Data Visualization": {
+      "1": "No visualization experience",
+      "2": "Creates basic charts in Excel",
+      "3": "Builds dashboards using BI tools",
+      "4": "Designs visualization standards for reports",
+      "5": "Expert in advanced/interactive visualization"
+    }
+  },
+  "Technical Skills": {
+    "Python": {
+      "1": "No programming experience",
+      "2": "Writes basic scripts with guidance",
+      "3": "Builds independent data processing scripts",
+      "4": "Develops production-grade Python applications",
+      "5": "Architects Python-based systems; mentors others"
+    },
+    "SQL": {
+      "1": "No database query experience",
+      "2": "Writes basic SELECT queries",
+      "3": "Writes joins, aggregations, subqueries independently",
+      "4": "Optimizes complex queries and designs schemas",
+      "5": "Expert in database architecture and performance tuning"
+    },
+    "Digital Tools Proficiency": {
+      "1": "Uses only basic office software",
+      "2": "Comfortable with standard e-governance portals",
+      "3": "Independently uses multiple digital govt. platforms",
+      "4": "Trains colleagues on digital tools",
+      "5": "Designs/evaluates digital tool adoption strategy"
+    }
+  },
+  "Digital Governance Skills": {
+    "Data Privacy & Security": {
+      "1": "Unaware of data privacy norms",
+      "2": "Aware of basic guidelines",
+      "3": "Applies data privacy norms in daily work",
+      "4": "Audits processes for compliance",
+      "5": "Designs data governance policy"
+    },
+    "e-Governance Systems": {
+      "1": "No exposure to e-governance platforms",
+      "2": "Uses one e-governance system as end-user",
+      "3": "Operates multiple systems (iGOT, DigiLocker, etc.)",
+      "4": "Manages/administers e-governance systems",
+      "5": "Designs e-governance system architecture"
+    }
+  },
+  "Behavioural Skills": {
+    "Leadership": {
+      "1": "Individual contributor only",
+      "2": "Leads small tasks within a team",
+      "3": "Manages a team/project independently",
+      "4": "Leads cross-departmental initiatives",
+      "5": "Sets organizational vision and strategy"
+    },
+    "Communication": {
+      "1": "Struggles with written/verbal reporting",
+      "2": "Communicates routine information clearly",
+      "3": "Presents complex information to stakeholders",
+      "4": "Represents department in high-stakes communication",
+      "5": "Recognized as a communication/training expert"
+    },
+    "Decision Making": {
+      "1": "Relies fully on supervisor for decisions",
+      "2": "Makes routine decisions independently",
+      "3": "Makes decisions under moderate ambiguity",
+      "4": "Makes high-impact decisions under pressure",
+      "5": "Sets decision-making frameworks for others"
+    }
+  }
+}

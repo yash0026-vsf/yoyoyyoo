@@ -1,0 +1,774 @@
+[
+  {
+    "identifier": "do_igotmock_0001",
+    "name": "Introduction to Survey Design",
+    "description": "A e learning module covering Survey Design for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Survey Design"
+    ],
+    "difficulty_level": 1,
+    "duration_hours": 8,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0002",
+    "name": "Advanced Survey Methodology for Field Officers",
+    "description": "A video module covering Survey Design, Data Analysis for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Survey Design",
+      "Data Analysis"
+    ],
+    "difficulty_level": 3,
+    "duration_hours": 16,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0003",
+    "name": "Descriptive Statistics for Public Servants",
+    "description": "A e learning module covering Data Analysis for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Analysis"
+    ],
+    "difficulty_level": 2,
+    "duration_hours": 10,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0004",
+    "name": "Statistical Inference and Sampling Theory",
+    "description": "A e learning module covering Data Analysis, Survey Design for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Analysis",
+      "Survey Design"
+    ],
+    "difficulty_level": 4,
+    "duration_hours": 20,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0005",
+    "name": "Data Visualization Using Power BI",
+    "description": "A video module covering Data Visualization for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Visualization"
+    ],
+    "difficulty_level": 2,
+    "duration_hours": 12,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0006",
+    "name": "Advanced Dashboard Design for Governance",
+    "description": "A video module covering Data Visualization, Digital Tools Proficiency for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Visualization",
+      "Digital Tools Proficiency"
+    ],
+    "difficulty_level": 3,
+    "duration_hours": 14,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0007",
+    "name": "Python for Beginners in Government",
+    "description": "A e learning module covering Python for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Python"
+    ],
+    "difficulty_level": 1,
+    "duration_hours": 15,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0008",
+    "name": "Python for Data Analysis in the Public Sector",
+    "description": "A e learning module covering Python, Data Analysis for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Python",
+      "Data Analysis"
+    ],
+    "difficulty_level": 3,
+    "duration_hours": 18,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0009",
+    "name": "Advanced Python: Automation for Officers",
+    "description": "A e learning module covering Python for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Python"
+    ],
+    "difficulty_level": 4,
+    "duration_hours": 20,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0010",
+    "name": "SQL Fundamentals for Government Data",
+    "description": "A e learning module covering SQL for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "SQL"
+    ],
+    "difficulty_level": 1,
+    "duration_hours": 10,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0011",
+    "name": "Advanced SQL and Database Design",
+    "description": "A e learning module covering SQL for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "SQL"
+    ],
+    "difficulty_level": 4,
+    "duration_hours": 16,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0012",
+    "name": "Digital Tools for Everyday Governance",
+    "description": "A video module covering Digital Tools Proficiency for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Digital Tools Proficiency"
+    ],
+    "difficulty_level": 1,
+    "duration_hours": 6,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0013",
+    "name": "Mastering e-Governance Platforms",
+    "description": "A video module covering Digital Tools Proficiency, e-Governance Systems for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Digital Tools Proficiency",
+      "e-Governance Systems"
+    ],
+    "difficulty_level": 3,
+    "duration_hours": 12,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0014",
+    "name": "Data Privacy Fundamentals for Officials",
+    "description": "A e learning module covering Data Privacy & Security for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Privacy & Security"
+    ],
+    "difficulty_level": 1,
+    "duration_hours": 8,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0015",
+    "name": "Advanced Data Governance and Compliance",
+    "description": "A e learning module covering Data Privacy & Security for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Privacy & Security"
+    ],
+    "difficulty_level": 4,
+    "duration_hours": 15,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0016",
+    "name": "Introduction to e-Governance Systems",
+    "description": "A video module covering e-Governance Systems for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "e-Governance Systems"
+    ],
+    "difficulty_level": 1,
+    "duration_hours": 8,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0017",
+    "name": "Administering iGOT and DigiLocker Systems",
+    "description": "A video module covering e-Governance Systems, Digital Tools Proficiency for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "e-Governance Systems",
+      "Digital Tools Proficiency"
+    ],
+    "difficulty_level": 3,
+    "duration_hours": 14,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0018",
+    "name": "Foundations of Leadership in Public Service",
+    "description": "A video module covering Leadership for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Leadership"
+    ],
+    "difficulty_level": 1,
+    "duration_hours": 10,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0019",
+    "name": "Leading Cross-Departmental Initiatives",
+    "description": "A video module covering Leadership, Decision Making for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Leadership",
+      "Decision Making"
+    ],
+    "difficulty_level": 4,
+    "duration_hours": 18,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0020",
+    "name": "Effective Communication for Government Officers",
+    "description": "A video module covering Communication for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Communication"
+    ],
+    "difficulty_level": 1,
+    "duration_hours": 8,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0021",
+    "name": "Stakeholder Communication and Public Speaking",
+    "description": "A video module covering Communication for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Communication"
+    ],
+    "difficulty_level": 3,
+    "duration_hours": 12,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0022",
+    "name": "Advanced Communication for Senior Officials",
+    "description": "A video module covering Communication for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Communication"
+    ],
+    "difficulty_level": 5,
+    "duration_hours": 16,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0023",
+    "name": "Decision Making Under Uncertainty",
+    "description": "A e learning module covering Decision Making for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Decision Making"
+    ],
+    "difficulty_level": 3,
+    "duration_hours": 12,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0024",
+    "name": "Strategic Decision Making for Leadership Roles",
+    "description": "A video module covering Decision Making, Leadership for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Decision Making",
+      "Leadership"
+    ],
+    "difficulty_level": 5,
+    "duration_hours": 20,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0025",
+    "name": "Design Thinking for Public Services",
+    "description": "A video module covering Decision Making, Communication for government officials.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Decision Making",
+      "Communication"
+    ],
+    "difficulty_level": 3,
+    "duration_hours": 10,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0026",
+    "name": "Advanced Survey Methodology for Field Officers - Intermediate Track",
+    "description": "A video module covering Survey Design, Data Analysis for government officials, intermediate level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Survey Design",
+      "Data Analysis"
+    ],
+    "difficulty_level": 3,
+    "duration_hours": 12,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0027",
+    "name": "Leading Cross-Departmental Initiatives - Advanced Track",
+    "description": "A video module covering Leadership, Decision Making for government officials, advanced level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Leadership",
+      "Decision Making"
+    ],
+    "difficulty_level": 4,
+    "duration_hours": 22,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0028",
+    "name": "Advanced Dashboard Design for Governance - Beginner Track",
+    "description": "A video module covering Data Visualization, Digital Tools Proficiency for government officials, beginner level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Visualization",
+      "Digital Tools Proficiency"
+    ],
+    "difficulty_level": 1,
+    "duration_hours": 18,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0029",
+    "name": "Advanced Dashboard Design for Governance - Beginner Track",
+    "description": "A video module covering Data Visualization, Digital Tools Proficiency for government officials, beginner level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Visualization",
+      "Digital Tools Proficiency"
+    ],
+    "difficulty_level": 1,
+    "duration_hours": 19,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0030",
+    "name": "Advanced Communication for Senior Officials - Foundation Track",
+    "description": "A video module covering Communication for government officials, foundation level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Communication"
+    ],
+    "difficulty_level": 2,
+    "duration_hours": 18,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0031",
+    "name": "Leading Cross-Departmental Initiatives - Foundation Track",
+    "description": "A video module covering Leadership, Decision Making for government officials, foundation level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Leadership",
+      "Decision Making"
+    ],
+    "difficulty_level": 2,
+    "duration_hours": 23,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0032",
+    "name": "Advanced Survey Methodology for Field Officers - Expert Track",
+    "description": "A video module covering Survey Design, Data Analysis for government officials, expert level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Survey Design",
+      "Data Analysis"
+    ],
+    "difficulty_level": 5,
+    "duration_hours": 13,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0033",
+    "name": "Advanced Communication for Senior Officials - Expert Track",
+    "description": "A video module covering Communication for government officials, expert level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Communication"
+    ],
+    "difficulty_level": 5,
+    "duration_hours": 21,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0034",
+    "name": "Advanced SQL and Database Design - Intermediate Track",
+    "description": "A e learning module covering SQL for government officials, intermediate level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "SQL"
+    ],
+    "difficulty_level": 3,
+    "duration_hours": 15,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0035",
+    "name": "Decision Making Under Uncertainty - Intermediate Track",
+    "description": "A e learning module covering Decision Making for government officials, intermediate level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Decision Making"
+    ],
+    "difficulty_level": 3,
+    "duration_hours": 11,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0036",
+    "name": "Mastering e-Governance Platforms - Foundation Track",
+    "description": "A video module covering Digital Tools Proficiency, e-Governance Systems for government officials, foundation level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Digital Tools Proficiency",
+      "e-Governance Systems"
+    ],
+    "difficulty_level": 2,
+    "duration_hours": 18,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0037",
+    "name": "SQL Fundamentals for Government Data - Advanced Track",
+    "description": "A e learning module covering SQL for government officials, advanced level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "SQL"
+    ],
+    "difficulty_level": 4,
+    "duration_hours": 11,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0038",
+    "name": "Introduction to Survey Design - Advanced Track",
+    "description": "A e learning module covering Survey Design for government officials, advanced level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Survey Design"
+    ],
+    "difficulty_level": 4,
+    "duration_hours": 13,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0039",
+    "name": "Statistical Inference and Sampling Theory - Beginner Track",
+    "description": "A e learning module covering Data Analysis, Survey Design for government officials, beginner level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Analysis",
+      "Survey Design"
+    ],
+    "difficulty_level": 1,
+    "duration_hours": 24,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0040",
+    "name": "Administering iGOT and DigiLocker Systems - Intermediate Track",
+    "description": "A video module covering e-Governance Systems, Digital Tools Proficiency for government officials, intermediate level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "e-Governance Systems",
+      "Digital Tools Proficiency"
+    ],
+    "difficulty_level": 3,
+    "duration_hours": 12,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0041",
+    "name": "Descriptive Statistics for Public Servants - Foundation Track",
+    "description": "A e learning module covering Data Analysis for government officials, foundation level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Analysis"
+    ],
+    "difficulty_level": 2,
+    "duration_hours": 11,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0042",
+    "name": "Advanced Dashboard Design for Governance - Advanced Track",
+    "description": "A video module covering Data Visualization, Digital Tools Proficiency for government officials, advanced level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Visualization",
+      "Digital Tools Proficiency"
+    ],
+    "difficulty_level": 4,
+    "duration_hours": 18,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0043",
+    "name": "SQL Fundamentals for Government Data - Expert Track",
+    "description": "A e learning module covering SQL for government officials, expert level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "SQL"
+    ],
+    "difficulty_level": 5,
+    "duration_hours": 16,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0044",
+    "name": "Introduction to Survey Design - Expert Track",
+    "description": "A e learning module covering Survey Design for government officials, expert level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Survey Design"
+    ],
+    "difficulty_level": 5,
+    "duration_hours": 8,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0045",
+    "name": "Statistical Inference and Sampling Theory - Foundation Track",
+    "description": "A e learning module covering Data Analysis, Survey Design for government officials, foundation level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Analysis",
+      "Survey Design"
+    ],
+    "difficulty_level": 2,
+    "duration_hours": 20,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "iGOT Karmayogi",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0046",
+    "name": "Statistical Inference and Sampling Theory - Expert Track",
+    "description": "A e learning module covering Data Analysis, Survey Design for government officials, expert level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Data Analysis",
+      "Survey Design"
+    ],
+    "difficulty_level": 5,
+    "duration_hours": 18,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0047",
+    "name": "SQL Fundamentals for Government Data - Expert Track",
+    "description": "A e learning module covering SQL for government officials, expert level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "SQL"
+    ],
+    "difficulty_level": 5,
+    "duration_hours": 9,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0048",
+    "name": "Advanced SQL and Database Design - Foundation Track",
+    "description": "A e learning module covering SQL for government officials, foundation level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "SQL"
+    ],
+    "difficulty_level": 2,
+    "duration_hours": 22,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NIC Training Division",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0049",
+    "name": "Advanced Python: Automation for Officers - Expert Track",
+    "description": "A e learning module covering Python for government officials, expert level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Python"
+    ],
+    "difficulty_level": 5,
+    "duration_hours": 23,
+    "contentType": "e-learning",
+    "mimeType": "application/vnd.ekstep.html-archive",
+    "channel": "NSSTA",
+    "status": "Live"
+  },
+  {
+    "identifier": "do_igotmock_0050",
+    "name": "Advanced Survey Methodology for Field Officers - Beginner Track",
+    "description": "A video module covering Survey Design, Data Analysis for government officials, beginner level.",
+    "primaryCategory": "Course",
+    "competencies_v3": [
+      "Survey Design",
+      "Data Analysis"
+    ],
+    "difficulty_level": 1,
+    "duration_hours": 22,
+    "contentType": "video",
+    "mimeType": "video/mp4",
+    "channel": "NSSTA",
+    "status": "Live"
+  }
+]

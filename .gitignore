@@ -1,0 +1,18 @@
+# Environment variables (NEVER commit secrets to GitHub)
+.env
+*.env
+
+# Python byte code and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Editor / IDE metadata
+.vscode/
+.idea/
+*.swp
