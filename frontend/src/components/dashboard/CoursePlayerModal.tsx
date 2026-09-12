@@ -1,24 +1,28 @@
 import { useState, useMemo, useEffect } from "react";
 import {
+  AlertCircle,
+  AlertTriangle,
   Award,
   BookOpen,
+  Check,
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
   Clock3,
   ExternalLink,
   FileText,
-  Play,
+  Lock,
   Pause,
+  Play,
   PlayCircle,
   RotateCcw,
+  ShieldCheck,
   Sparkles,
   Target,
   Tv,
-  X,
-  AlertCircle,
   Volume2,
   VolumeX,
+  X,
 } from "lucide-react";
 import { generateDynamicCourseQuiz, type QuizQuestion } from "@/lib/quiz-data";
 import { syncActiveUserAssessmentHistory } from "@/lib/auth-service";
@@ -970,15 +974,49 @@ export function CoursePlayerModal({
   if (!isOpen || !course) return null;
 
   const [activeTab, setActiveTab] = useState<"syllabus" | "material" | "quiz">(initialTab);
-  const [completedLessons, setCompletedLessons] = useState<Record<string, boolean>>({});
+  const [completedLessons, setCompletedLessons] = useState<Record<string, boolean>>(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const saved = localStorage.getItem(`statskill_lessons_${course.id}`);
+        if (saved) return JSON.parse(saved);
+      } catch {}
+    }
+    return {};
+  });
   const [selectedLesson, setSelectedLesson] = useState<number>(0);
   const [playerMode, setPlayerMode] = useState<"video" | "slides">("video"); // Default to official NPTEL/SWAYAM video
+
+  // Watch tracking per lesson (0 to 100%) - requires 80%+ to unlock
+  const [lessonWatchPercent, setLessonWatchPercent] = useState<Record<string, number>>(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const saved = localStorage.getItem(`statskill_watch_${course.id}`);
+        if (saved) return JSON.parse(saved);
+      } catch {}
+    }
+    return {};
+  });
+
+  // Lesson quiz completion tracking
+  const [lessonQuizPassed, setLessonQuizPassed] = useState<Record<string, boolean>>(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const saved = localStorage.getItem(`statskill_quiz_${course.id}`);
+        if (saved) return JSON.parse(saved);
+      } catch {}
+    }
+    return {};
+  });
+
+  const [lessonQuizAnswers, setLessonQuizAnswers] = useState<Record<string, number>>({});
+  const [quizFeedback, setQuizFeedback] = useState<Record<string, "correct" | "incorrect">>({});
+  const [antiCheatWarning, setAntiCheatWarning] = useState<string | null>(null);
 
   // Audio simulation state for slide deck
   const [isPlayingAudio, setIsPlayingAudio] = useState(true);
   const [isAudioMuted, setIsAudioMuted] = useState(false);
 
-  // Dynamic AI Quiz State
+  // Dynamic AI Course Mastery Quiz State
   const [quizStarted, setQuizStarted] = useState(false);
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
   const [quizSubmitted, setQuizSubmitted] = useState(false);
@@ -988,6 +1026,7 @@ export function CoursePlayerModal({
     setActiveTab(initialTab);
     setSelectedLesson(0);
     setPlayerMode("video");
+    setAntiCheatWarning(null);
   }, [course.id, initialTab]);
 
   // Generate dynamic AI questions specifically for this course
@@ -1048,6 +1087,131 @@ export function CoursePlayerModal({
   const completedCount = Object.values(completedLessons).filter(Boolean).length;
   const progressPercent = Math.round((completedCount / totalLessons) * 100);
 
+  // Lesson Comprehension Quick-Quiz Check Question Bank
+  const lessonQuickQuestions = useMemo(() => {
+    const map: Record<number, { question: string; options: string[]; answer: number; rationale: string }> = {};
+    allLessons.forEach((l, idx) => {
+      const lower = l.title.toLowerCase();
+      if (lower.includes("python") || lower.includes("syntax") || lower.includes("variable") || lower.includes("data frame")) {
+        map[idx] = {
+          question: `Regarding ${l.title}: Which Python library is standard for tabular official statistics data pipelines?`,
+          options: ["pandas & numpy", "matplotlib only", "re module", "os buffer"],
+          answer: 0,
+          rationale: "Pandas and NumPy provide vectorized DataFrame operations mandated for microdata processing."
+        };
+      } else if (lower.includes("sample") || lower.includes("survey") || lower.includes("stratifi") || lower.includes("srswor")) {
+        map[idx] = {
+          question: `Regarding ${l.title}: What is the primary objective of stratified multi-stage sampling?`,
+          options: [
+            "Guarantees a complete census count",
+            "Minimizes variance by ensuring homogenous subgroups (strata) are represented",
+            "Eliminates the requirement for a sampling frame",
+            "Enables informal convenience sampling"
+          ],
+          answer: 1,
+          rationale: "Stratification ensures sub-populations are proportionally sampled, minimizing sampling variance."
+        };
+      } else if (lower.includes("gis") || lower.includes("spatial") || lower.includes("map")) {
+        map[idx] = {
+          question: `Regarding ${l.title}: Which national geospatial coordinate datum is standardized across Survey of India maps?`,
+          options: ["WGS 84 (EPSG:4326)", "Arbitrary Local Grid", "Uncalibrated Cartesian Space", "Unreferenced Pixel Mesh"],
+          answer: 0,
+          rationale: "WGS 84 (EPSG:4326) is the national GIS spatial datum standard."
+        };
+      } else if (lower.includes("national") || lower.includes("account") || lower.includes("gsdp") || lower.includes("sna")) {
+        map[idx] = {
+          question: `Regarding ${l.title}: Under the SNA framework, Gross Value Added (GVA) is computed as:`,
+          options: [
+            "Gross Output + Subsidies",
+            "Gross Output minus Intermediate Consumption",
+            "Final Consumption + Inventory Depreciation",
+            "Tax Revenues divided by Trade Deficit"
+          ],
+          answer: 1,
+          rationale: "GVA = Gross Output - Intermediate Consumption according to SNA 2008 standards."
+        };
+      } else if (lower.includes("govern") || lower.includes("dpdp") || lower.includes("privacy")) {
+        map[idx] = {
+          question: `Regarding ${l.title}: Under DPDP Act 2023, what is mandatory prior to releasing public survey microdata?`,
+          options: [
+            "Strict statistical anonymization and removal of direct personal identifiers",
+            "Mandatory publishing of full personal contact phone numbers",
+            "Monetizing citizen demographic records",
+            "No privacy safeguards are necessary"
+          ],
+          answer: 0,
+          rationale: "The DPDP Act 2023 strictly mandates de-identification and statistical anonymization."
+        };
+      } else {
+        map[idx] = {
+          question: `Regarding ${l.title}: Which procedure ensures data integrity under the National Quality Assurance Framework (NQAF)?`,
+          options: [
+            "Automated validation rules and verifiable audit trails",
+            "Deleting discrepancies without documentation",
+            "Manual unlogged overrides",
+            "Omitting confidence interval computations"
+          ],
+          answer: 0,
+          rationale: "Automated validation and logged audit trails ensure NQAF compliance."
+        };
+      }
+    });
+    return map;
+  }, [allLessons]);
+
+  const currentLessonQuiz = lessonQuickQuestions[selectedLesson] || lessonQuickQuestions[0];
+  const currentWatchPct = lessonWatchPercent[currentLessonKey] ?? 0;
+  const isCurrentQuizDone = !!lessonQuizPassed[currentLessonKey];
+  const isLessonEligibleToComplete = currentWatchPct >= 80 && isCurrentQuizDone;
+
+  // Track video watch time while video mode is active
+  useEffect(() => {
+    if (!isOpen || activeTab !== "material" || playerMode !== "video") return;
+    const interval = setInterval(() => {
+      setLessonWatchPercent((prev) => {
+        const current = prev[currentLessonKey] ?? 0;
+        if (current >= 100) return prev;
+        const nextVal = Math.min(100, current + 2);
+        const updated = { ...prev, [currentLessonKey]: nextVal };
+        try {
+          localStorage.setItem(`statskill_watch_${course.id}`, JSON.stringify(updated));
+        } catch {}
+        return updated;
+      });
+    }, 1500);
+
+    return () => clearInterval(interval);
+  }, [isOpen, activeTab, playerMode, currentLessonKey, course.id]);
+
+  // Fast-Forward to 85% for easy testing & evaluation
+  const simulateFastWatch = () => {
+    setLessonWatchPercent((prev) => {
+      const updated = { ...prev, [currentLessonKey]: 85 };
+      try {
+        localStorage.setItem(`statskill_watch_${course.id}`, JSON.stringify(updated));
+      } catch {}
+      return updated;
+    });
+    setAntiCheatWarning(null);
+  };
+
+  const handleLessonQuizAnswer = (optionIdx: number) => {
+    setLessonQuizAnswers((prev) => ({ ...prev, [currentLessonKey]: optionIdx }));
+    if (optionIdx === currentLessonQuiz.answer) {
+      setQuizFeedback((prev) => ({ ...prev, [currentLessonKey]: "correct" }));
+      setLessonQuizPassed((prev) => {
+        const updated = { ...prev, [currentLessonKey]: true };
+        try {
+          localStorage.setItem(`statskill_quiz_${course.id}`, JSON.stringify(updated));
+        } catch {}
+        return updated;
+      });
+      setAntiCheatWarning(null);
+    } else {
+      setQuizFeedback((prev) => ({ ...prev, [currentLessonKey]: "incorrect" }));
+    }
+  };
+
   const syncCourseProgress = (updatedCompleted: Record<string, boolean>) => {
     try {
       const raw = localStorage.getItem("active_learning_paths");
@@ -1073,21 +1237,48 @@ export function CoursePlayerModal({
     } catch {}
   };
 
-  const toggleLesson = (key: string) => {
+  const toggleLesson = (key: string, forceDone?: boolean) => {
+    const watch = lessonWatchPercent[key] ?? 0;
+    const quizDone = lessonQuizPassed[key] ?? false;
+    const currentlyDone = !!completedLessons[key];
+
+    // Anti-cheat verification: must have watched 80%+ and passed the quiz!
+    if (!currentlyDone && !forceDone && (watch < 80 || !quizDone)) {
+      setAntiCheatWarning(
+        `Anti-Cheat Policy: Progress is locked. You must watch at least 80% of the video (currently ${watch}%) and answer the lesson quiz before this lesson can be marked complete.`
+      );
+      return;
+    }
+
     setCompletedLessons((prev) => {
       const next = {
         ...prev,
-        [key]: !prev[key],
+        [key]: forceDone ? true : !prev[key],
       };
       syncCourseProgress(next);
+      try {
+        localStorage.setItem(`statskill_lessons_${course.id}`, JSON.stringify(next));
+      } catch {}
       return next;
     });
   };
 
   const markCurrentLessonComplete = () => {
-    if (!isCurrentLessonDone) {
-      toggleLesson(currentLessonKey);
+    if (isCurrentLessonDone) return;
+    if (currentWatchPct < 80) {
+      setAntiCheatWarning(
+        `Anti-Cheat Policy: You must watch at least 80% of the lecture video before marking this lesson complete (currently at ${currentWatchPct}%). Keep watching or click "⚡ Fast-Forward to 85%".`
+      );
+      return;
     }
+    if (!isCurrentQuizDone) {
+      setAntiCheatWarning(
+        "Verification Required: Please solve the Lesson Comprehension Quiz below correctly before marking this lesson complete."
+      );
+      return;
+    }
+    setAntiCheatWarning(null);
+    toggleLesson(currentLessonKey, true);
   };
 
   const handleQuizAnswer = (qId: number, optionIdx: number) => {
@@ -1239,6 +1430,21 @@ export function CoursePlayerModal({
           {/* TAB 1: SYLLABUS */}
           {activeTab === "syllabus" && (
             <div className="space-y-6 max-w-4xl mx-auto">
+              {/* Anti-Cheat Alert Banner if triggered */}
+              {antiCheatWarning && (
+                <div className="flex items-center gap-3 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3.5 text-xs text-amber-700 dark:text-amber-300 animate-in fade-in">
+                  <AlertTriangle className="h-4 w-4 shrink-0 text-amber-500" />
+                  <div className="flex-1 font-medium">{antiCheatWarning}</div>
+                  <button
+                    type="button"
+                    onClick={() => setAntiCheatWarning(null)}
+                    className="text-muted-foreground hover:text-foreground text-xs font-semibold shrink-0"
+                  >
+                    Dismiss
+                  </button>
+                </div>
+              )}
+
               <div className="rounded-xl border border-border bg-background p-4 shadow-sm">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-bold text-foreground">Course Overview & Cadre Alignment</h3>
@@ -1276,6 +1482,9 @@ export function CoursePlayerModal({
                         const isDone = !!completedLessons[lessonKey];
                         const lessonFlatIdx = mIdx * 2 + lIdx;
                         const lessonVideo = topicVideos[lessonFlatIdx % topicVideos.length];
+                        const watchPct = lessonWatchPercent[lessonKey] ?? 0;
+                        const quizPassed = !!lessonQuizPassed[lessonKey];
+                        const isEligible = watchPct >= 80 && quizPassed;
 
                         return (
                           <div
@@ -1289,20 +1498,45 @@ export function CoursePlayerModal({
                                 className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border transition ${
                                   isDone
                                     ? "border-success bg-success text-success-foreground"
-                                    : "border-border bg-background text-transparent hover:border-accent"
+                                    : isEligible
+                                    ? "border-accent bg-accent/10 text-accent hover:bg-accent/20"
+                                    : "border-border bg-muted/30 text-muted-foreground hover:border-amber-500/50 hover:text-amber-500"
                                 }`}
-                                title="Mark lesson complete"
+                                title={
+                                  isDone
+                                    ? "Lesson Completed"
+                                    : isEligible
+                                    ? "Requirements met! Click to mark complete"
+                                    : `Locked: Requires 80%+ video watch (currently ${watchPct}%) and quiz`
+                                }
                               >
-                                <CheckCircle2 className="h-4 w-4" />
+                                {isDone ? (
+                                  <CheckCircle2 className="h-4 w-4" />
+                                ) : isEligible ? (
+                                  <Check className="h-3.5 w-3.5 text-accent" />
+                                ) : (
+                                  <Lock className="h-3 w-3" />
+                                )}
                               </button>
                               <div>
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-2 flex-wrap">
                                   <h5 className="text-xs font-semibold text-foreground">
                                     {lesson.title}
                                   </h5>
                                   {lessonVideo && (
                                     <span className="rounded bg-accent/10 px-1.5 py-0.2 text-[9px] font-bold text-accent">
                                       {lessonVideo.providerBadge}
+                                    </span>
+                                  )}
+                                  {isDone ? (
+                                    <span className="rounded bg-success/15 px-1.5 py-0.2 text-[9px] font-bold text-success">
+                                      Verified 100%
+                                    </span>
+                                  ) : (
+                                    <span className={`rounded px-1.5 py-0.2 text-[9px] font-medium ${
+                                      watchPct >= 80 ? "bg-accent/10 text-accent font-semibold" : "bg-muted text-muted-foreground"
+                                    }`}>
+                                      {watchPct}% Watched · {quizPassed ? "Quiz Done" : "Quiz Required"}
                                     </span>
                                   )}
                                 </div>
@@ -1482,15 +1716,167 @@ export function CoursePlayerModal({
                   )}
                 </div>
 
-                {/* Lesson Navigation Controls directly beneath the player */}
-                <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-border">
+                {/* Anti-Cheat Warning Alert Banner */}
+                {antiCheatWarning && (
+                  <div className="flex items-center gap-3 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3.5 text-xs text-amber-700 dark:text-amber-300 animate-in fade-in">
+                    <AlertTriangle className="h-4 w-4 shrink-0 text-amber-500" />
+                    <div className="flex-1 font-medium">{antiCheatWarning}</div>
+                    <button
+                      type="button"
+                      onClick={() => setAntiCheatWarning(null)}
+                      className="text-muted-foreground hover:text-foreground text-xs font-semibold shrink-0"
+                    >
+                      Dismiss
+                    </button>
+                  </div>
+                )}
+
+                {/* Mandatory Video Watch & Comprehension Verification Card */}
+                <div className="rounded-xl border border-border bg-card p-4 sm:p-5 space-y-4 shadow-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border pb-3">
+                    <div className="flex items-center gap-2">
+                      <ShieldCheck className="h-4 w-4 text-accent" />
+                      <span className="text-xs font-bold uppercase tracking-wider text-foreground">
+                        Lesson Completion Verification
+                      </span>
+                    </div>
+                    <span className="text-[11px] text-muted-foreground">
+                      Strict Rule: 80%+ Video Watch Time + Quiz Required
+                    </span>
+                  </div>
+
+                  {/* Requirement 1: Video Watch Progress Bar */}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="flex items-center gap-1.5 font-semibold text-foreground">
+                        <Tv className="h-3.5 w-3.5 text-accent" />
+                        Video Watch Progress:
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className={`font-bold ${currentWatchPct >= 80 ? "text-success" : "text-foreground"}`}>
+                          {currentWatchPct}% / 80% Required
+                        </span>
+                        {currentWatchPct >= 80 ? (
+                          <span className="inline-flex items-center gap-1 rounded bg-success/15 px-2 py-0.5 text-[10px] font-bold text-success">
+                            <CheckCircle2 className="h-3 w-3" /> Requirement Met
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1 rounded bg-amber-500/15 px-2 py-0.5 text-[10px] font-bold text-amber-600 dark:text-amber-400">
+                            <Lock className="h-3 w-3" /> Needs {80 - currentWatchPct}% More
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="relative h-2.5 w-full rounded-full bg-muted overflow-hidden">
+                      <div
+                        className={`h-full rounded-full transition-all duration-300 ${
+                          currentWatchPct >= 80 ? "bg-success" : "bg-accent"
+                        }`}
+                        style={{ width: `${Math.min(100, currentWatchPct)}%` }}
+                      />
+                      {/* 80% marker line */}
+                      <div
+                        className="absolute top-0 bottom-0 w-0.5 bg-foreground/60 z-10"
+                        style={{ left: "80%" }}
+                        title="80% Completion Threshold"
+                      />
+                    </div>
+
+                    <div className="flex items-center justify-between text-[11px] text-muted-foreground pt-0.5">
+                      <span>
+                        {currentWatchPct >= 80
+                          ? "✓ Video requirement fulfilled (80%+ completed)."
+                          : "Lecture watch progress updates automatically while video plays."}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={simulateFastWatch}
+                        className="inline-flex items-center gap-1 rounded-md border border-accent/30 bg-accent/10 px-2 py-1 text-[10px] font-bold text-accent hover:bg-accent/20 transition"
+                        title="Fast-forward video watch progress to 85% for instant testing"
+                      >
+                        ⚡ Fast-Forward to 85% (Test)
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Requirement 2: Mandatory Quick Comprehension Quiz */}
+                  <div className="rounded-xl border border-border bg-muted/20 p-4 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="flex items-center gap-1.5 text-xs font-bold text-foreground">
+                        <Sparkles className="h-3.5 w-3.5 text-accent" />
+                        Mandatory Lesson Quiz: {currentLesson.title}
+                      </span>
+                      {isCurrentQuizDone ? (
+                        <span className="inline-flex items-center gap-1 rounded bg-success/15 px-2 py-0.5 text-[10px] font-bold text-success">
+                          <CheckCircle2 className="h-3 w-3" /> Quiz Passed
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1 rounded bg-amber-500/15 px-2 py-0.5 text-[10px] font-bold text-amber-600 dark:text-amber-400">
+                          <Lock className="h-3 w-3" /> Solve to Unlock
+                        </span>
+                      )}
+                    </div>
+
+                    <p className="text-xs font-medium text-foreground leading-relaxed">
+                      {currentLessonQuiz.question}
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {currentLessonQuiz.options.map((opt, oIdx) => {
+                        const isSelected = lessonQuizAnswers[currentLessonKey] === oIdx;
+                        const isCorrectAnswer = oIdx === currentLessonQuiz.answer;
+                        let btnStyle = "border-border bg-card text-muted-foreground hover:bg-muted/50 hover:text-foreground";
+                        if (quizFeedback[currentLessonKey]) {
+                          if (isSelected && isCorrectAnswer) {
+                            btnStyle = "border-success bg-success/15 text-success font-semibold shadow-sm";
+                          } else if (isSelected && !isCorrectAnswer) {
+                            btnStyle = "border-destructive bg-destructive/15 text-destructive font-semibold";
+                          } else if (isCorrectAnswer) {
+                            btnStyle = "border-success/50 bg-success/10 text-success";
+                          }
+                        }
+
+                        return (
+                          <button
+                            key={oIdx}
+                            type="button"
+                            onClick={() => handleLessonQuizAnswer(oIdx)}
+                            className={`text-left rounded-lg border p-2.5 text-xs transition flex items-start gap-2.5 ${btnStyle}`}
+                          >
+                            <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full border text-[10px] font-bold mt-0.5">
+                              {String.fromCharCode(65 + oIdx)}
+                            </span>
+                            <span className="leading-snug">{opt}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {quizFeedback[currentLessonKey] === "correct" && (
+                      <div className="flex items-center gap-2 rounded-lg bg-success/10 border border-success/20 p-2.5 text-xs text-success animate-in fade-in">
+                        <CheckCircle2 className="h-4 w-4 shrink-0" />
+                        <span><strong>Correct!</strong> {currentLessonQuiz.rationale}</span>
+                      </div>
+                    )}
+                    {quizFeedback[currentLessonKey] === "incorrect" && (
+                      <div className="flex items-center gap-2 rounded-lg bg-destructive/10 border border-destructive/20 p-2.5 text-xs text-destructive animate-in fade-in">
+                        <AlertCircle className="h-4 w-4 shrink-0" />
+                        <span>Incorrect answer. Select the correct choice based on the lecture to unlock lesson completion.</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Lesson Navigation Controls */}
+                <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-border">
                   <button
                     type="button"
                     disabled={selectedLesson === 0}
                     onClick={() => {
                       setSelectedLesson((prev) => Math.max(0, prev - 1));
                     }}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-muted disabled:opacity-40 disabled:pointer-events-none transition"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3.5 py-2 text-xs font-semibold text-foreground hover:bg-muted disabled:opacity-40 disabled:pointer-events-none transition"
                   >
                     <ChevronLeft className="h-4 w-4" /> Previous Lesson
                   </button>
@@ -1499,14 +1885,37 @@ export function CoursePlayerModal({
                     <button
                       type="button"
                       onClick={markCurrentLessonComplete}
-                      className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-semibold transition ${
+                      className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold transition shadow-sm ${
                         isCurrentLessonDone
-                          ? "bg-success/15 text-success border border-success/30"
-                          : "bg-accent text-accent-foreground shadow hover:bg-accent/90"
+                          ? "bg-success/15 text-success border border-success/30 cursor-default"
+                          : isLessonEligibleToComplete
+                          ? "bg-accent text-accent-foreground shadow hover:bg-accent/90"
+                          : "border border-border bg-muted/60 text-muted-foreground hover:border-amber-500/50 hover:text-amber-600 dark:hover:text-amber-400 cursor-pointer"
                       }`}
+                      title={
+                        isCurrentLessonDone
+                          ? "Lesson verified and completed"
+                          : isLessonEligibleToComplete
+                          ? "Click to mark lesson complete"
+                          : "Locked: 80%+ video watch and quiz required"
+                      }
                     >
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                      {isCurrentLessonDone ? "Completed" : "Mark as Completed"}
+                      {isCurrentLessonDone ? (
+                        <>
+                          <CheckCircle2 className="h-4 w-4 text-success" />
+                          Lesson Completed
+                        </>
+                      ) : isLessonEligibleToComplete ? (
+                        <>
+                          <CheckCircle2 className="h-4 w-4" />
+                          Mark as Completed
+                        </>
+                      ) : (
+                        <>
+                          <Lock className="h-3.5 w-3.5" />
+                          Locked (Watch 80%+ & Solve Quiz)
+                        </>
+                      )}
                     </button>
                   </div>
 
@@ -1514,10 +1923,10 @@ export function CoursePlayerModal({
                     type="button"
                     disabled={selectedLesson >= allLessons.length - 1}
                     onClick={() => {
-                      markCurrentLessonComplete();
+                      // Navigate to next lesson without automatically marking complete
                       setSelectedLesson((prev) => Math.min(allLessons.length - 1, prev + 1));
                     }}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-muted disabled:opacity-40 disabled:pointer-events-none transition"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3.5 py-2 text-xs font-semibold text-foreground hover:bg-muted disabled:opacity-40 disabled:pointer-events-none transition"
                   >
                     Next Lesson <ChevronRight className="h-4 w-4" />
                   </button>
