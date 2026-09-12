@@ -318,7 +318,7 @@ function BuildProfilePage() {
                     <input
                       value={profile.name}
                       onChange={(e) => updateProfile("name", e.target.value)}
-                      placeholder="e.g. Tanmay Mamania"
+                      placeholder="e.g. Yash"
                       className={`mt-1.5 w-full rounded-lg border bg-background px-3.5 py-2.5 text-xs text-foreground outline-none transition placeholder:text-muted-foreground focus:ring-2 ${
                         profile.name && !nameValidation.isValid
                           ? "border-destructive focus:ring-destructive/20"

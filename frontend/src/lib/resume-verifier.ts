@@ -1,10 +1,10 @@
-﻿/**
+/**
  * Resume Identity & Candidate Verification Engine
  *
  * Verifies that an uploaded resume actually belongs to the authenticated
  * candidate/officer rather than another individual.
  *
- * Prevents name mismatches (e.g. uploading "Rajesh Kumar" while registered as "Tanmay Mamania")
+ * Prevents name mismatches (e.g. uploading "Rajesh Kumar" while registered as "Yash")
  * and extracts claimed cadre skills.
  */
 
