@@ -1,7 +1,7 @@
 def merge_skills(existing_skills, extracted_skills):
     """
     Merges existing skills with newly extracted skills.
-    Performs case-insensitive matching and takes the maximum proficiency level.
+    Performs case-insensitive matching and takes the maximum proficiency level...
     """
     final_skills = existing_skills.copy()
 
