@@ -1,5 +1,5 @@
 """Backend Integration Server (FastAPI)
-Brings the Backend API together with Member 2's AI Skill Assessment & Gap Analysis engine.
+Brings the Backend API together with Member 2's AI Skill Assessment & Gap Analysis engine..,
 """
 
 from fastapi import FastAPI, HTTPException
