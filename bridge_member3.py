@@ -1,5 +1,5 @@
 """Bridge Connector: Member 2 (AI Skill Assessment & Gap Analysis) 
-                 <-> Member 3 (Adaptive Quiz & Course Recommender)
+                 <-> Member 3 (Adaptive Quiz & Course Recommenderrr)
 
 This script demonstrates the complete end-to-end flow:
 1. Ingests employee profile & extracts skills from resume (Member 2)
