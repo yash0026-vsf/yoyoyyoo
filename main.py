@@ -1,6 +1,6 @@
 import sys
 import time
-from data_loader import load_employees, load_requirements  
+from data_loader import load_employees, load_requirements
 from gap_analyzer import merge_skills, calculate_skill_gaps
 from skill_extractor import extract_skills
 from skill_normalizer import normalize_extracted_skills
