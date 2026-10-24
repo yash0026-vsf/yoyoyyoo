@@ -2,7 +2,7 @@
 Connects Member 2's AI Skill Intelligence engine directly with Member 5's React frontend
 (https://github.com/NihalTiwari8008/statskill-ai-entry).
 
-Maintains 100% UI/UX fidelity while powering:
+Maintains 100% UI/UX fidelity while powering:   
 1. POST /api/assess -> Gemini AI extraction & semantic taxonomy normalization
 2. GET  /api/gap-analysis/{employee_id} -> Live benchmark gap calculation
 3. GET  /api/competencies/{employee_id} -> Radar chart & domain percentages
