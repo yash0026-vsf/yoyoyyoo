@@ -10,7 +10,7 @@ if hasattr(sys.stdout, "reconfigure"):
     try:
         sys.stdout.reconfigure(encoding="utf-8")
     except Exception:
-        pass
+        pass  
 
 # Expose top-level FastAPI application for Render, Uvicorn, and cloud deployments
 from statskill_backend import app
